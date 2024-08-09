@@ -34,23 +34,52 @@ html {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background: var(--dark-base);
-    color: var(--dark-950);
-    text-align: center;
-    font-size: 48px;
-    height: 100vh;
-    font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  background: var(--dark-base);
+  color: var(--dark-950);
+  text-align: center;
+  font-size: 48px;
+  font-weight: 600;
 }
 
-.title {
-  font-size: 1.3em;
+::selection {
+  background: red;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  height: 100vh;
+}
+
+#title {
+  font-size: 4em;
+  font-weight: 900;
+}
+
+.animation {
+  animation: fade-down 0.5s;
 }
 
 #given-word {
-  margin: var(--margin-l) auto;
-  width: 70px;
-  border-bottom: 2px dashed var(--dark-500);
+  margin: var(--margin-xs);
+  color: var(--dark-600);
+}
+
+#given-word:before {
+  content: "Word: ";
+}
+
+.underline {
+  display: inline-block;
+  border-bottom: 1px dashed var(--dark-600);
+  padding-bottom: 0.25rem;
+  text-transform: capitalize;
 }
 
 .outline {
@@ -65,31 +94,58 @@ body {
 #word-guess {
   padding: var(--margin-s);
   font-size: 1em;
-  cursor: pointer;
-  max-width: 700px;
-  width: 100%;
+  width: 700px;
+  max-width: 100%;
   outline: none;
   text-align: center;
   font-family: 'Roboto', sans-serif;
-  font-weight: 600;
+  font-weight: 300;
+  color: var(--dark-700);
+  box-sizing: border-box;
+  display: block;
+  margin: var(--margin-xl) auto;
 }
 
-#check-btn {
+#new-btn {
   padding: var(--margin-s);
-  font-size: 1.15em;
+  font-size: 0.7em;
+  height: auto;
   width: 100%;
-  max-width: 80px;
+  max-width: 200px;
   cursor: pointer;
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
 }
 
-#check-btn:hover {
-  background-color: var(--dark-950);
-  color: var(--dark-base);
+#new-btn:hover {
+  background: red;
+  border: none;
+  transition: background 0.5s;
 }
 
 u {
     text-decoration: underline;
     text-decoration-style: dotted;
+}
+
+.hidden {
+  display: none;
+}
+
+#result__text {
+  margin-bottom: var(--margin-xxl);
+  font-weight: 400;
+}
+
+/* ANIMATIONS */
+@keyframes fade-down {
+  0% {
+      opacity: 0;
+      transform: translateY(-30px) scale(0.9);
+  }
+
+  100% {
+      opacity: 1;
+      translate: translateY(0px) scale(1);
+  }
 }

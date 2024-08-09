@@ -1,24 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Anagrams</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   </head>
   <body>
-      <h1 class="title">Anagrams</h1>
       <div class="container">
-        <p id="given-word">tea</p>
+        <h1 id="title">ANAGRAMS</h1>
+        <p id="given-word" class="underline"></p>
         <div id="user-input">
           <label for="word-guess"></label>
-          <input id="word-guess" class="outline" required />
-          <button id="check-btn" class="outline">X</button>
+          <input id="word-guess" class="outline" placeholder="Guess an anagram!" required />
         </div>
-        <div id="result"></div>
+        <div id="result">
+          <p id="result__text"></p>
+          <button id="new-btn" class="outline hidden">New Word!</button>
+        </div>
       </div>
-      <script src="script.js"></script>
+      <script src="./js/script.js"></script>
   </body>
 </html>
